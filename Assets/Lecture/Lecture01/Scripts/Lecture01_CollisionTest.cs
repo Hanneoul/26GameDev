@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CollisionTest : MonoBehaviour
+public class Lecture01_CollisionTest : MonoBehaviour
 {
     int EnterCount = 0;
     int ExitCount = 0;
