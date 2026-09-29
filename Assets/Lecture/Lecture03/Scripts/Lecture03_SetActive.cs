@@ -15,5 +15,7 @@ public class Lecture03_SetActive : MonoBehaviour
     void Update()
     {
         activeGameObject.SetActive(isActive);
+
+        
     }
 }
