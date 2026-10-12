@@ -1,0 +1,39 @@
+[유니티 2D 기초 실기 평가 시험지]
+
+공통 시험 환경 세팅
+프로젝트 템플릿: Unity 2D URP (Universal Render Pipeline)
+Game 뷰 해상도: 1920x1080 (16:9 Full HD) 고정
+Main Camera: Projection을 Orthographic으로 설정하고 Size를 5.0으로 맞출 것.
+
+문제 1: 카메라 뷰포트 정렬 및 스프라이트 크기·위치 배치
+
+[문제 설명]
+화면 중앙에 기준이 되는 2D 스프라이트를 띄우고, 카메라가 이를 정확한 비율과 위치로 비추고 있는지 확인한다.
+
+[세부 요구사항]
+- Main Camera의 Background 색상을 진한 회색(#222222)으로 변경함.
+- Camera 컴포넌트의 Size가 정확히 5.0으로 설정되어 있는지 확인함.
+- Hierarchy 창에서 2D Object -> Sprites -> Square를 생성하고 이름을 'Target_Square'로 변경함.
+- Transform Position을 (X: 0, Y: 0, Z: 0)으로 설정함.
+- Scale을 (X: 2, Y: 2, Z: 1)로 설정하여 화면 중앙에 배치함.
+
+[채점 기준]
+Game 뷰에서는 회색 배경 위에 하얀색 사각형이 정중앙에 떠 있어야 함.
+Scene 뷰에서는 카메라의 직교 투영 가이드 라인(Camera Frustum) 내부에 사각형이 완전히 포함되어 있어야 함.
+
+
+
+문제 2: 스프라이트 레이어(Sorting Layer) 및 렌더링 순서 설정
+
+[문제 설명]
+두 개의 스프라이트를 동일한 좌표에 겹쳐서 배치하고, 렌더링 우선순위를 올바르게 설정하는지 확인한다.
+
+[세부 요구사항]
+첫 번째 오브젝트를 생성하고 이름을 'BG_Card'로 지정함. 위치는 (X: 0, Y: -1, Z: 0)으로 설정함.
+두 번째 오브젝트를 생성하고 이름을 'Front_Item'으로 지정함. 위치는 'BG_Card'와 동일하게 (X: 0, Y: -1, Z: 0)으로 설정함.
+'BG_Card'의 Sprite Renderer 색상을 파란색으로 변경하고, Order in Layer를 0으로 설정함.
+'Front_Item'의 Sprite Renderer 색상을 빨간색으로 변경하고, Order in Layer를 1로 설정함.
+
+[채점 기준]
+Game 뷰에서 파란색 카드 위에 빨간색 사각형이 가려지지 않고 온전하게 위로 얹혀서 보여야 함.
+제출된 에디터 화면의 Inspector 창에서 'Front_Item'의 Sprite Renderer 컴포넌트와 Order in Layer 값이 '1'로 입력된 상태가 선명하게 노출되어야 함.
