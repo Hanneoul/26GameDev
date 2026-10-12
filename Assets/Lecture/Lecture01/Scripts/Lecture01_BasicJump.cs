@@ -21,5 +21,6 @@ public class Lecture01_BasicJump : MonoBehaviour
     {
         Vector2 upForce = new Vector2(0.0f, 1.0f) * force;
         rb.AddForce(upForce);
+        
     }
 }
